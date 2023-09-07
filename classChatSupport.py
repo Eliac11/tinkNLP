@@ -4,7 +4,7 @@ from classModelInterface import ModelInterface
 class ChatSupport:
     def __init__(self):
         self.__MInterface = ModelInterface()
-        self.__usersDialogs = shelve.open("UsersDialogData")
+        self.__usersDialogs = {}
 
     def __getUserdialog(self, userid):
         if userid in self.__usersDialogs:
