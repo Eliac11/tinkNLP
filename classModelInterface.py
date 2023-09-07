@@ -1,12 +1,12 @@
 import torch
 from transformers import AutoTokenizer, AutoModelWithLMHead
 
-
+modelname = "Eliac11/FitModel"
 
 class ModelInterface:
     def __init__(self):
-        self.__tokenizer = AutoTokenizer.from_pretrained("Eliac11/tinkNLP")
-        self.__model = AutoModelWithLMHead.from_pretrained("Eliac11/tinkNLP")
+        self.__tokenizer = AutoTokenizer.from_pretrained(modelname)
+        self.__model = AutoModelWithLMHead.from_pretrained(modelname,from_tf=True)
 
     def generate(self, text):
         inputs = self.__tokenizer(text, return_tensors='pt')
