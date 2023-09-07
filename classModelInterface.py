@@ -1,17 +1,12 @@
 import torch
 from transformers import AutoTokenizer, AutoModelWithLMHead
-import os
 
-nowpath = os.getcwd()
-savemodelpath = nowpath + "/model/"
+
 
 class ModelInterface:
     def __init__(self):
-        self.__tokenizer = AutoTokenizer.from_pretrained(savemodelpath, local_files_only=True)
-        self.__model = AutoModelWithLMHead.from_pretrained(savemodelpath)
-
-        # tokenizer.save_pretrained(savemodelpath)
-        # model.save_pretrained(savemodelpath)
+        self.__tokenizer = AutoTokenizer.from_pretrained("Eliac11/tinkNLP")
+        self.__model = AutoModelWithLMHead.from_pretrained("Eliac11/tinkNLP")
 
     def generate(self, text):
         inputs = self.__tokenizer(text, return_tensors='pt')
