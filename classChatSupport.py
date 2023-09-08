@@ -16,7 +16,7 @@ class ChatSupport:
 
     def getAnswer(self,userid,text):
 
-        dig = self.__getUserdialog(userid) + " @@ПЕРВЫЙ@@ " + text + " @@ВТОРОЙ@@ "
+        dig = self.__getUserdialog(userid) + " @@ПЕРВЫЙ@@ " + text + " @@ВТОРОЙ@@"
         ans = self.__MInterface.generate(dig)
 
         self.__setUserdialog(userid, ans)

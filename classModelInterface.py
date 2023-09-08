@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelWithLMHead
-
+import random
 modelname = "Eliac11/FitModel"
 
 class ModelInterface:
@@ -22,7 +22,7 @@ class ModelInterface:
                                             repetition_penalty=1.2,
                                             length_penalty=2,
                                             eos_token_id=50257,
-                                            max_new_tokens=20
+                                            max_new_tokens=50
                                         )
 
         return self.__tokenizer.decode(generated_token_ids[0])
