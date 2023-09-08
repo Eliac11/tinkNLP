@@ -22,7 +22,7 @@ class ModelInterface:
                                             repetition_penalty=1.2,
                                             length_penalty=2,
                                             eos_token_id=50257,
-                                            max_new_tokens=50
+                                            max_new_tokens=25
                                         )
 
         return self.__tokenizer.decode(generated_token_ids[0])
